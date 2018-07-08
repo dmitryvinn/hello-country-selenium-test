@@ -1,6 +1,5 @@
 package com.dvinnik.hellocountry;
 
-import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +34,9 @@ public class HybridAppCssTest {
     public void testDesktopFlagState() {
         driver.manage().window().setSize(new Dimension(927, 518));
         driver.get(WEBSITE_URL);
+
         WebElement flag = getFlag();
+
         assertEquals(flag.getCssValue("visibility"), "visible");
     }
 
@@ -43,7 +44,9 @@ public class HybridAppCssTest {
     public void testMobileFlagState() {
         driver.manage().window().setSize(new Dimension(374, 667));
         driver.get(WEBSITE_URL);
+
         WebElement flag = getFlag();
+
         assertEquals(flag.getCssValue("display"), "none");
     }
 
@@ -51,7 +54,9 @@ public class HybridAppCssTest {
     public void testPlatformTransitionFlagState() {
         driver.manage().window().setSize(new Dimension(375,667));
         driver.get(WEBSITE_URL);
+
         WebElement flag = getFlag();
+
         assertEquals(flag.getCssValue("visibility"), "hidden");
     }
 
